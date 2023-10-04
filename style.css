@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inconsolata', monospace;}
+.container
+{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(46deg,#e15876, #3e3b92)
+}   
+.box{
+    height: 32vh;
+    width: 70vw;
+    position: absolute;
+    top: 35vh;
+    left: 15vw;
+   
+}
+.timer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(10 59 227 / 24%);
+    backdrop-filter: blur(40px);
+    border-radius: 20px;
+    z-index: 2;
+
+}
+.box::after{
+    content: '';
+    width: 30vh;
+    height: 30vh;
+    background-color: #ed3b3b;
+    border-radius: 25px;
+    position: absolute;
+    left: -6vh;
+    top : -10vh;
+    animation  : box1  15s ease-in-out  1s infinite alternate;   
+}
+@keyframes box1{
+    0%{
+        transform: translate(0vw);
+    }
+    100%{
+        transform: translate(61vw);
+    }
+
+}
+.box::before{
+    content: '';
+    width: 30vh;
+    height: 30vh;
+    background-color: #35e1e7a8;
+    border-radius: 50%;
+    position: absolute;
+    right: -6vh;
+    bottom : -10vh;
+    animation: box2 15s ease-in-out 1s infinite alternate;
+
+}
+@keyframes box2{
+    0%{
+        transform: translate(0vw);
+    }
+    100%{
+        transform: translate(-61vw);
+    }
+}  
+
+.timer span{
+    font-size: 10vi;
+    margin-left: 2vw; 
+    margin-bottom: 5vh;
+    margin-right: 1.5vw;
+   
+}
+.hours::before{
+    font-size: 2.3vi;
+    position: absolute;
+    content: "Hours";
+    top: 25vh;
+    left: 10.3vw;   
+}
+.minutes::before{
+    font-size: 2vi;
+    position: absolute;
+    content: "Minutes";
+    top: 25vh;
+    left: 32vw;  /*these left and top value are relative to the first non static parent that is the timer container */
+}
+.seconds::before{
+    font-size: 2vi;
+    position: absolute;
+    content: "Seconds";
+    top: 25vh;
+    left: 53.7vw;
+
+}
+
+
