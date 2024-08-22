@@ -1,4 +1,5 @@
-import mysql.connector as mc
+import MySQLdb as mc
+
 con=mc.connect(host="localhost",user="root",passwd="",database='test')
 cur=con.cursor()
 
