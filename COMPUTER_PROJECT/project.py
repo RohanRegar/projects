@@ -3,7 +3,8 @@ import random
 import csv
 account=open('account.csv','a+',newline='')
                                  
-import mysql.connector as mc
+import MySQLdb as mc
+
 con=mc.connect(host="localhost",user="root",passwd="",database='test')
 cur=con.cursor()
 
